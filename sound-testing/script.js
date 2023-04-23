@@ -3,7 +3,8 @@ let sound,
     size;
 
 function preload() {
-  sound = loadSound('./music/sample-mario.mp3', startSound);
+  soundFormats('mp3');
+  sound = loadSound('./music/sample-mario', startSound);
 }
 function setup() {
   createCanvas(400, 400);
