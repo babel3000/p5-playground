@@ -3,25 +3,24 @@ let sound,
     size;
 
 function preload() {
-  soundFormats('mp3');
-  sound = loadSound('./music/sample-mario', startSound);
+    soundFormats('mp3');
+    sound = loadSound('./music/sample-mario', startSound);
 }
 function setup() {
-    document.querySelector('canvas').focus();
-  createCanvas(400, 400);
-  amp = new p5.Amplitude();
+    createCanvas(400, 400);
+    amp = new p5.Amplitude();
 }
 
 function draw() {
-  background(220);
-  size = map(amp.getLevel(), 0 , 1, 10, width)
-  console.log()
-  fill(255, 0, 0)
-  ellipse(width / 2, height / 2, size, size)
+    background(220);
+    size = map(amp.getLevel(), 0 , 1, 10, width)
+    console.log()
+    fill(255, 0, 0)
+    ellipse(width / 2, height / 2, size, size)
 }
 
 function startSound() {
-    sound.play()
+    document.querySelector('canvas').focus();
 }
 
 function keyTyped() {
