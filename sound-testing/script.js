@@ -4,7 +4,7 @@ let sound,
 
 function preload() {
     soundFormats('mp3');
-    sound = loadSound('./music/sample-mario', startSound);
+    sound = loadSound('./music/sample-mario');
 }
 function setup() {
     createCanvas(400, 400);
@@ -17,11 +17,10 @@ function draw() {
     console.log()
     fill(255, 0, 0)
     ellipse(width / 2, height / 2, size, size)
+    text('Press SPACE to start', width / 2, height - 20)
+    textAlign(CENTER)
 }
 
-function startSound() {
-    document.querySelector('canvas').focus();
-}
 
 function keyTyped() {
     if (key === ' ') {
