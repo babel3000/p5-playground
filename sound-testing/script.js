@@ -7,6 +7,7 @@ function preload() {
   sound = loadSound('./music/sample-mario', startSound);
 }
 function setup() {
+    document.querySelector('canvas').focus();
   createCanvas(400, 400);
   amp = new p5.Amplitude();
 }
