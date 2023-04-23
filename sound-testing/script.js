@@ -24,7 +24,6 @@ function startSound() {
 }
 
 function keyTyped() {
-    
     if (key === ' ') {
         if (sound.isPlaying()) {
             sound.pause()
