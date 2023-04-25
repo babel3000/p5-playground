@@ -10,7 +10,7 @@ function draw() {
     let volume = audioIn.getLevel();
     console.log(volume);
     background(155);
-    ellipse(width / 2, height - 100, width - 200, volume * 1500);
+    ellipse(width / 2, height - 100, width - 200, volume * 2000);
     
     // eyes!
     ellipse(width / 4, height / 4, 50, 50);
