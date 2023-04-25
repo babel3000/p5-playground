@@ -1,33 +1,18 @@
-let sound,
-    amp,
-    size;
+let audioIn;
 
-function preload() {
-    soundFormats('mp3');
-    sound = loadSound('./music/sample-mario');
-}
 function setup() {
     createCanvas(400, 400);
-    amp = new p5.Amplitude();
+    audioIn = new p5.AudioIn();
+    audioIn.start();
 }
 
 function draw() {
-    background(220);
-    size = map(amp.getLevel(), 0 , 1, 10, width)
-    console.log()
-    fill(255, 0, 0)
-    ellipse(width / 2, height / 2, size, size)
-    text('Press SPACE to start', width / 2, height - 20)
-    textAlign(CENTER)
-}
-
-
-function keyTyped() {
-    if (key === ' ') {
-        if (sound.isPlaying()) {
-            sound.pause()
-        } else {
-            sound.play()
-        }
-    }
+    let volume = audioIn.getLevel();
+    console.log(volume);
+    background(155);
+    ellipse(width / 2, height - 100, width - 200, volume * 1500);
+    
+    // eyes!
+    ellipse(width / 4, height / 4, 50, 50);
+    ellipse(width * .75, height / 4, 50, 50);
 }
